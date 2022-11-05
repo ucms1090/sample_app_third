@@ -1,0 +1,32 @@
+<div class="list-wrap">
+<% @list.each do |f| %>
+  <div class="list-box">
+    <% if f.image.attached? %>
+      <%= image_tag f.image, size: "300x300" %>
+    <% else %>
+      <%= image_tag 'no_image', size: "300x300" %>
+    <% end %>
+    <div class="list-comment">
+      <span class="list-body"><%= f.body %></span>
+      <span class="list-title"><%= link_to f.title, list_path(f.id) %></span>
+    </div>
+  </div>
+<%end%>
+</div>
+
+
+
+<!--<h1>とうこういちらん</h1>-->
+<!--  <% @list.each do |f| %>-->
+<!--    <p>たいとる</p>-->
+<!--    <span><%= link_to f.title,list_path(f.id) %></span>-->
+<!--    <p>画像</p>-->
+<!--    <% if f.image.attached? %>-->
+<!--      <%= image_tag f.image, size: "300x300" %>-->
+<!--    <% else %>-->
+<!--      <%= image_tag 'no_image', size: "300x300" %>-->
+<!--    <% end %>-->
+<!--  <% end %>-->
+<!--  <div>-->
+<!--    <%= link_to '投稿画面へ',new_list_path %>-->
+<!--  </div>-->

@@ -1,0 +1,20 @@
+<h1>へんしゅうがめん</h1>
+
+<%= form_with model: @list, url: list_path(@list.id), method: :patch  do |f| %>
+<!--エラー画面では"list_path"になっているって出てる
+　　他の場合との相違点がわからない
+　　form_withが生成するのは単数形のpath?-->
+  <h2>タイトルです</h2>
+  <%= f.text_field :title %>
+  
+  <h2>本文です</h2>
+  <%= f.text_area :body %>
+  
+  <h3>画像でつ</h3>
+  <%= f.file_field :image, accept: "image/*" %>
+  
+  <div>
+    <%= f.submit 'かいぞう'%>
+  </div>
+
+<% end %>
